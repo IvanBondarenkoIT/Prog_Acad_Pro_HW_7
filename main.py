@@ -15,6 +15,15 @@ from my_range import MyRange
 
 VALUE_LIMIT = 10_000
 
+def prime_numbers(lim:int=10):
+    if not isinstance(lim, int):
+        raise ValueError
+    for i in range(2, lim + 1):
+        for j in range(2, i):
+            if i % j == 0:
+                break
+        else:
+            yield i
 
 def geometric_progression(multiplier):
     is_it_end = False
@@ -40,13 +49,18 @@ def main():
     #         g.close()
 
     # 2)
-    mr = MyRange()
-    for i in mr.range(6):
-        print(i)
-    for i in mr.range(7, 10):
-        print(i)
-    for i in mr.range(2, 16, 3):
-        print(i)
+    # mr = MyRange()
+    # for i in mr.range(6):
+    #     print(i)
+    # for i in mr.range(7, 10):
+    #     print(i)
+    # for i in mr.range(2, 16, 3):
+    #     print(i)
+
+    # 3)
+    print(*prime_numbers(1000))
+
+
 
 
 
