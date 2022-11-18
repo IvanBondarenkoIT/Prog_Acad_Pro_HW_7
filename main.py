@@ -10,6 +10,9 @@
 4. Напишіть генераторний вираз для заповнення списку.
  Список повинен бути заповнений кубами чисел від 2 до вказаної вами величини.
 '''
+
+from my_range import MyRange
+
 VALUE_LIMIT = 10_000
 
 
@@ -25,18 +28,26 @@ def geometric_progression(multiplier):
 
 def main():
     # 1)
-    g = geometric_progression(2)
-    for item in g:
-        user_input = input(f"Value = {item}, press 'N' to end").lower()
-        if user_input == 'n':
-            try:
-                g.send(user_input)
-            except StopIteration:
-                pass
-        if item > VALUE_LIMIT:
-            g.close()
+    # g = geometric_progression(2)
+    # for item in g:
+    #     user_input = input(f"Value = {item}, press 'N' to end").lower()
+    #     if user_input == 'n':
+    #         try:
+    #             g.send(user_input)
+    #         except StopIteration:
+    #             pass
+    #     if item > VALUE_LIMIT:
+    #         g.close()
 
     # 2)
+    mr = MyRange()
+    for i in mr.range(6):
+        print(i)
+    for i in mr.range(7, 10):
+        print(i)
+    for i in mr.range(2, 16, 3):
+        print(i)
+
 
 
 if __name__ == "__main__":
