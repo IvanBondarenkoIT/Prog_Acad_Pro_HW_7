@@ -15,6 +15,7 @@ from my_range import MyRange
 
 VALUE_LIMIT = 10_000
 
+
 def prime_numbers(lim:int=10):
     if not isinstance(lim, int):
         raise ValueError
@@ -37,31 +38,32 @@ def geometric_progression(multiplier):
 
 def main():
     # 1)
-    # g = geometric_progression(2)
-    # for item in g:
-    #     user_input = input(f"Value = {item}, press 'N' to end").lower()
-    #     if user_input == 'n':
-    #         try:
-    #             g.send(user_input)
-    #         except StopIteration:
-    #             pass
-    #     if item > VALUE_LIMIT:
-    #         g.close()
+    g = geometric_progression(2)
+    for item in g:
+        user_input = input(f"Value = {item}, press 'N' to end").lower()
+        if user_input == 'n':
+            try:
+                g.send(user_input)
+            except StopIteration:
+                pass
+        if item > VALUE_LIMIT:
+            g.close()
 
     # 2)
-    # mr = MyRange()
-    # for i in mr.range(6):
-    #     print(i)
-    # for i in mr.range(7, 10):
-    #     print(i)
-    # for i in mr.range(2, 16, 3):
-    #     print(i)
+    mr = MyRange()
+    for i in mr.range(6):
+        print(i)
+    for i in mr.range(7, 10):
+        print(i)
+    for i in mr.range(2, 16, 3):
+        print(i)
 
     # 3)
     print(*prime_numbers(1000))
 
-
-
+    # 4)
+    user_number = 50
+    print(list(i**3 for i in range(2, user_number)))
 
 
 if __name__ == "__main__":
